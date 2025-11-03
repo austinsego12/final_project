@@ -27,6 +27,11 @@ header {
 
 main {
   padding: 1rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2, h3, h4 {
@@ -90,8 +95,9 @@ footer {
 .sample-paragraph {
   font-family: var(--paragraph-font);
   color: var(--accent2-color);
-  /* Branding Section (Logo/Image Styling) */
+}
 
+/* Branding Section (Logo/Image Styling) */
 section img {
   display: block;
   max-width: 80%;
@@ -114,4 +120,8 @@ section h2, section h3 {
   text-align: center;
 }
 
+/* Add subtle section spacing */
+section {
+  margin-bottom: 2.5rem;
 }
+
