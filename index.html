@@ -9,30 +9,30 @@
 
 <body>
 
-<header class="header-grid">
+  <!-- HEADER -->
+  <header class="header-grid">
 
-  <img class="header-logo" src="images/austinsegologo.png" alt="Austin Sego Portfolio Logo">
+    <img class="header-logo" src="images/austinsegologo.png" alt="Austin Sego Portfolio Logo">
 
-  <h1 class="header-title">Austin Sego Portfolio</h1>
+    <h1 class="header-title">Austin Sego Portfolio</h1>
 
-  <nav class="header-nav">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About Me</a>
-  </nav>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About Me</a>
+    </nav>
 
-</header>
+  </header>
 
-
-
+  <!-- MAIN CONTENT -->
   <main>
 
     <div class="home-grid">
 
-      <!-- TITLE -->
+      <!-- PAGE TITLE -->
       <h2 class="home-title">Home Page</h2>
 
-      <!-- TWO IMAGES SIDE BY SIDE -->
+      <!-- LEFT & RIGHT IMAGES -->
       <img src="images/home1.jpg" alt="Workspace" class="home-img-left">
       <img src="images/home2.jpg" alt="Desk Setup" class="home-img-right">
 
@@ -50,7 +50,7 @@
         </p>
       </div>
 
-      <!-- BOTTOM TEXT LINES -->
+      <!-- TWO SMALL TEXT LINES -->
       <p class="home-text3">
         This site gives a simple overview of my current interests and goals.
       </p>
@@ -59,16 +59,69 @@
         Use the navigation above to explore my projects and learn more about me.
       </p>
 
+      <!-- ------------------------------------------------------- -->
+      <!--                     TABS COMPONENT                      -->
+      <!-- ------------------------------------------------------- -->
+
+      <div class="tab-container">
+
+        <!-- Tab buttons -->
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'Gaming')">Gaming</button>
+          <button class="tablinks" onclick="openTab(event, 'Tech')">Tech</button>
+          <button class="tablinks" onclick="openTab(event, 'Music')">Music</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Gaming" class="tabcontent">
+          <h3>Gaming</h3>
+          <p>I enjoy games like Minecraft, Rust, and Fortnite. I like exploring open-world environments, building things, and improving my skills through competitive play.</p>
+        </div>
+
+        <div id="Tech" class="tabcontent">
+          <h3>Tech</h3>
+          <p>I enjoy working with computers, learning programming, exploring web development, and upgrading hardware. Technology is a big part of my future career goals.</p>
+        </div>
+
+        <div id="Music" class="tabcontent">
+          <h3>Music</h3>
+          <p>I enjoy listening to music while I work and relax. I also like discovering new artists and learning about different styles and genres.</p>
+        </div>
+
+      </div>
+
     </div>
 
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Austin Sego</p>
     <a href="site-plan.html">View Site Plan</a>
   </footer>
 
+  <!-- JavaScript for Tabs -->
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+
 </body>
 </html>
+
 
 
