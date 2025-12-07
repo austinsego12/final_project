@@ -1,3 +1,6 @@
+/* ---------------------------------------- */
+/*              GLOBAL VARIABLES            */
+/* ---------------------------------------- */
 :root {
   --primary-color: #0057a3;
   --secondary-color: #ff8c00;
@@ -8,180 +11,142 @@
   --paragraph-font: "Roboto", sans-serif;
 }
 
-/* General Page Styles */
+/* ---------------------------------------- */
+/*               GLOBAL STYLES              */
+/* ---------------------------------------- */
 body {
-  font-family: var(--paragraph-font);
-  color: var(--accent2-color);
-  background-color: var(--accent1-color);
   margin: 0;
   padding: 0;
+  font-family: var(--paragraph-font);
+  background-color: var(--accent1-color);
+  color: var(--accent2-color);
   line-height: 1.6;
 }
 
-/* ---------------------------------------------- */
-/*                     HEADER                     */
-/* ---------------------------------------------- */
-.header-grid {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  grid-template-rows: auto auto;
+h1, h2, h3, h4 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* ---------------------------------------- */
+/*                 HEADER                    */
+/* ---------------------------------------- */
+header {
   background-color: var(--primary-color);
   color: white;
-  padding: 0.7rem 1rem;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.header-logo {
-  width: 80px;
-  height: auto;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  border-radius: 6px;
-}
-
-.header-title {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  padding: 1.5rem 1rem;
   text-align: center;
-  font-size: 1.8rem;
-  margin: 0;
+  border-bottom: 4px solid #003d73;
 }
 
-.header-nav {
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
+header .logo {
+  width: 110px;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* ---------------------------------------- */
+/*                NAVIGATION                 */
+/* ---------------------------------------- */
+nav {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  padding-top: 0.5rem;
+  gap: 2rem;
 }
 
-.header-nav a {
-  color: white;
+nav a {
   text-decoration: none;
-  font-family: var(--heading-font);
+  color: white;
+  font-weight: bold;
   font-size: 1.1rem;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-.header-nav a:hover {
-  text-decoration: underline;
+nav a:hover,
+nav a.active {
+  background-color: var(--secondary-color);
+  color: #000;
 }
 
-/* ---------------------------------------------- */
-/*                  HOME PAGE GRID                */
-/* ---------------------------------------------- */
-.home-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* ---------------------------------------- */
+/*                  MAIN WRAPPER            */
+/* ---------------------------------------- */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ---------------------------------------- */
+/*             HOME PAGE IMAGES             */
+/* ---------------------------------------- */
+.image-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.image-grid img {
+  width: 45%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------------------------------------- */
+/*            ABOUT PAGE SECTIONS           */
+/* ---------------------------------------- */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   margin-top: 2rem;
+  align-items: center;
 }
 
-.home-title {
-  grid-column: 1 / 3;
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.about-section .portrait {
+  width: 260px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* Home images */
-.home-img-left,
-.home-img-right {
-  width: 80%;
-  max-width: 280px;
-  justify-self: center;
+.about-section .workspace {
+  width: 360px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Home text blocks */
-.home-text1,
-.home-text2 {
-  grid-column: 1 / 3;
-  background: white;
-  padding: 1rem 1.2rem;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  font-size: 1.05rem;
-}
-
-.home-text3,
-.home-text4 {
-  grid-column: 1 / 3;
-  text-align: center;
-  font-size: 1.1rem;
-}
-
-/* ---------------------------------------------- */
-/*                 TABS COMPONENT                 */
-/* ---------------------------------------------- */
-.tab-container {
-  grid-column: 1 / 3;
-  margin-top: 2rem;
-}
-
-.tab {
-  overflow: hidden;
-  background-color: #ddd;
-  border-radius: 8px;
-}
-
-.tab button {
-  background-color: #bbb;
-  color: black;
-  float: left;
-  border: none;
-  padding: 12px 20px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 1rem;
-}
-
-.tab button:hover {
-  background-color: #999;
-}
-
-.tab button.active {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-.tabcontent {
-  display: none;
-  padding: 1rem;
-  border: 2px solid #ccc;
-  border-top: none;
-  background: white;
-  border-radius: 0 0 8px 8px;
-  margin-bottom: 1rem;
-}
-
-/* ---------------------------------------------- */
-/* Responsive layout                              */
-/* ---------------------------------------------- */
-@media (max-width: 700px) {
-  .home-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .home-img-left,
-  .home-img-right {
-    max-width: 300px;
-    width: 90%;
-  }
-}
-/* PROJECTS PAGE GRID  */
+/* ---------------------------------------- */
+/*          PROJECTS PAGE GRID (FIXED)      */
+/* ---------------------------------------- */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem 3rem;
-  max-width: 900px;
-  margin: 2rem auto;
+  gap: 3rem 2rem;
+  margin-top: 2rem;
 }
 
 .project-block {
   text-align: center;
+  padding: 1rem;
 }
 
 .project-block img {
@@ -195,14 +160,102 @@ body {
 
 .project-block h3 {
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
+  font-size: 1.3rem;
 }
 
 .project-block p {
   max-width: 85%;
-  margin: 0.5rem auto 0;
-  line-height: 1.5;
+  margin: 0.5rem auto;
 }
+
+/* ---------------------------------------- */
+/*                 TABS STYLING             */
+/* ---------------------------------------- */
+.tab {
+  overflow: hidden;
+  background-color: #ccc;
+  margin-top: 2rem;
+  border-radius: 6px;
+}
+
+.tab button {
+  background-color: inherit;
+  border: none;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+  font-family: var(--heading-font);
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.tabcontent {
+  display: none;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------------------- */
+/*            WIREFRAME IMAGE STYLE         */
+/* ---------------------------------------- */
+.wireframe-img {
+  display: block;
+  max-width: 700px;
+  width: 100%;
+  margin: 1.5rem auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ---------------------------------------- */
+/*                   FOOTER                 */
+/* ---------------------------------------- */
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* ---------------------------------------- */
+/*             RESPONSIVE DESIGN            */
+/* ---------------------------------------- */
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-grid img {
+    width: 90%;
+  }
+
+  .about-section img {
+    width: 90%;
+  }
+}
+
 
 
 
