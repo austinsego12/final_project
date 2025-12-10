@@ -9,119 +9,104 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header-grid">
+<header>
+  <img class="logo" src="images/austinsegologo.png" alt="Austin Sego Logo">
+  <h1>Austin Sego Portfolio</h1>
 
-    <img class="header-logo" src="images/austinsegologo.png" alt="Austin Sego Portfolio Logo">
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About Me</a>
+  </nav>
+</header>
 
-    <h1 class="header-title">Austin Sego Portfolio</h1>
+<main>
 
-    <nav class="header-nav">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About Me</a>
-    </nav>
+  <div class="home-grid">
 
-  </header>
+    <h2 class="home-title">Home Page</h2>
 
-  <!-- MAIN CONTENT -->
-  <main>
+    <!-- Home Page Images -->
+    <img src="images/home1.jpg" alt="Workspace" class="home-img-left">
+    <img src="images/home2.jpg" alt="Desk Setup" class="home-img-right">
 
-    <div class="home-grid">
+    <!-- Text Blocks -->
+    <div class="home-text1">
+      <p>
+        Welcome to my portfolio. My name is Austin Sego, and this website introduces who I am, what I enjoy creating, and the direction I’m headed academically and creatively.
+      </p>
+    </div>
 
-      <!-- PAGE TITLE -->
-      <h2 class="home-title">Home Page</h2>
+    <div class="home-text2">
+      <p>
+        I enjoy learning new skills, exploring technology, creating digital projects, and improving my abilities through practice and experimentation.
+      </p>
+    </div>
 
-      <!-- LEFT & RIGHT IMAGES -->
-      <img src="images/home1.jpg" alt="Workspace" class="home-img-left">
-      <img src="images/home2.jpg" alt="Desk Setup" class="home-img-right">
+    <!-- Bottom text lines -->
+    <p class="home-text3">This site gives a simple overview of my current interests and goals.</p>
+    <p class="home-text4">Use the navigation above to explore my projects and learn more about me.</p>
 
-      <!-- TEXT BLOCK 1 -->
-      <div class="home-text1">
-        <p>
-          Welcome to my portfolio. My name is Austin Sego, and this website introduces who I am, what I enjoy creating, and the direction I’m headed academically and creatively.
-        </p>
+    <!-- TABS COMPONENT -->
+    <div class="tab-container">
+
+      <!-- tab buttons -->
+      <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Gaming')">Gaming</button>
+        <button class="tablinks" onclick="openTab(event, 'Tech')">Tech</button>
+        <button class="tablinks" onclick="openTab(event, 'Music')">Music</button>
       </div>
 
-      <!-- TEXT BLOCK 2 -->
-      <div class="home-text2">
-        <p>
-          I enjoy learning new skills, exploring technology, creating digital projects, and improving my abilities through practice and experimentation.
-        </p>
+      <!-- tab content -->
+      <div id="Gaming" class="tabcontent">
+        <h3>Gaming</h3>
+        <p>I enjoy games like Minecraft, Rust, and Fortnite. I like exploring open-world environments and improving my skills over time.</p>
       </div>
 
-      <!-- TWO SMALL TEXT LINES -->
-      <p class="home-text3">
-        This site gives a simple overview of my current interests and goals.
-      </p>
+      <div id="Tech" class="tabcontent">
+        <h3>Tech</h3>
+        <p>I enjoy building computers, writing code, working with hardware, and exploring web development.</p>
+      </div>
 
-      <p class="home-text4">
-        Use the navigation above to explore my projects and learn more about me.
-      </p>
-
-      <!-- ------------------------------------------------------- -->
-      <!--                     TABS COMPONENT                      -->
-      <!-- ------------------------------------------------------- -->
-
-      <div class="tab-container">
-
-        <!-- Tab buttons -->
-        <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'Gaming')">Gaming</button>
-          <button class="tablinks" onclick="openTab(event, 'Tech')">Tech</button>
-          <button class="tablinks" onclick="openTab(event, 'Music')">Music</button>
-        </div>
-
-        <!-- Tab content -->
-        <div id="Gaming" class="tabcontent">
-          <h3>Gaming</h3>
-          <p>I enjoy games like Minecraft, Rust, and Fortnite. I like exploring open-world environments, building things, and improving my skills through competitive play.</p>
-        </div>
-
-        <div id="Tech" class="tabcontent">
-          <h3>Tech</h3>
-          <p>I enjoy working with computers, learning programming, exploring web development, and upgrading hardware. Technology is a big part of my future career goals.</p>
-        </div>
-
-        <div id="Music" class="tabcontent">
-          <h3>Music</h3>
-          <p>I enjoy listening to music while I work and relax. I also like discovering new artists and learning about different styles and genres.</p>
-        </div>
-
+      <div id="Music" class="tabcontent">
+        <h3>Music</h3>
+        <p>I enjoy listening to new genres, discovering artists, and using music to stay focused and motivated.</p>
       </div>
 
     </div>
 
-  </main>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Austin Sego</p>
-    <a href="site-plan.html">View Site Plan</a>
-  </footer>
+</main>
 
-  <!-- JavaScript for Tabs -->
-  <script>
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
+<footer>
+  <p>© 2025 Austin Sego</p>
+  <a href="site-plan.html">View Site Plan</a>
+</footer>
 
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
+<!-- JavaScript for Tabs -->
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
 
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
 
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-  </script>
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
 </body>
 </html>
+
 
 
 
