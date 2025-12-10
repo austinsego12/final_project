@@ -92,18 +92,23 @@ main {
 .image-grid {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
   margin-top: 2rem;
 }
 
+
+/* Fix oversized home page images */
 .image-grid img {
-  width: 45%;
-  max-width: 350px;
+  width: 100%;
+  max-width: 400px;   /* Controls size — adjust if needed */
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: 0.3s ease;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
+
 
 .image-grid img:hover {
   transform: scale(1.05);
