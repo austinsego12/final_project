@@ -201,43 +201,72 @@ main {
   margin-bottom: 1rem;
 }
 /* ---------------------------------------- */
-/*             ABOUT PAGE GRID              */
+/*            ABOUT PAGE LAYOUT (GRID)      */
 /* ---------------------------------------- */
-.about-grid {
+
+.about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+  align-items: center;
   margin-top: 2rem;
+}
+
+/* Top image */
+.about-section .portrait {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  justify-self: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Top text */
+.about-text {
+  text-align: left;
+}
+
+/* Bottom section wrapper */
+.about-more {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
   align-items: center;
 }
 
-.about-img {
+/* Bottom image */
+.about-more img {
   width: 100%;
-  max-width: 380px;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  display: block;
+  max-width: 420px;
+  border-radius: 12px;
+  justify-self: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.about-text {
-  max-width: 500px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.7;
+/* Bottom text blocks */
+.about-more-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* Mobile layout */
-@media (max-width: 700px) {
-  .about-grid {
+/* ---------------------------------------- */
+/*          ABOUT PAGE RESPONSIVE           */
+/* ---------------------------------------- */
+@media (max-width: 800px) {
+  .about-section,
+  .about-more {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .about-text {
-    max-width: 90%;
+  .about-text,
+  .about-more-text {
+    text-align: center;
   }
 }
+
 
 
 /* ---------------------------------------- */
